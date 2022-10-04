@@ -131,9 +131,9 @@ class Decompressor:
                 current_code=""
         return decoded_text
         
-    def decompress(self,path):#Decompresses file at the given path with the key initialised
+    def decompress(self,path,ext):#Decompresses file at the given path with the key initialised
         filename,file_extension=os.path.splitext(path)
-        out_path=filename+"_decompressed"+".txt"
+        out_path=filename+"_decompressed"+"."+ext
         file=open(path,'rb')
         out_file=open(out_path,'w')
         bit_string=""
@@ -156,4 +156,4 @@ C=Compressor()
 key=C.compress(filepath)
 D=Decompressor(key)
 filename, file_extension=os.path.splitext(filepath)
-D.decompress(filename+".bin")
+D.decompress(filename+".bin",file_extension)
