@@ -133,7 +133,7 @@ class Decompressor:
         
     def decompress(self,path,ext):#Decompresses file at the given path with the key initialised
         filename,file_extension=os.path.splitext(path)
-        out_path=filename+"_decompressed"+"."+ext
+        out_path=filename+"_decompressed"+ext
         file=open(path,'rb')
         out_file=open(out_path,'w')
         bit_string=""
